@@ -10,7 +10,7 @@ const App = () => {
   // const [formStatus, setFormStatus] = useState(false);
   const initialValues = { username: "", email: "", password: "" };
   const [formData, setFormData] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
+  // const [formErrors, setFormErrors] = useState({});
 
   // const handleChange = (event) => {
   //   console.log("event", event.target.value, event.target.name);
@@ -30,12 +30,12 @@ const App = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const errorRet = signUpFormValidation(formData);
+    // const errorRet = signUpFormValidation(formData);
     // setFormErrors(errorRet);
-    if (Object.keys(errorRet).length === 0) {
-      setFormStatus(true);
-      setFormData(initialValues);
-    }
+    // if (Object.keys(errorRet).length === 0) {
+    //   setFormStatus(true);
+    //   setFormData(initialValues);
+    // }
     console.log("FormData", username, email, password);
     setFormStatus(true);
     setUsername("");
@@ -88,7 +88,7 @@ const App = () => {
             onChange={input_email}
             value={formData.email}
           />
-          <div>{formErrors.email}</div>
+          {/* <div>{formErrors.email}</div> */}
           <br></br>
           Password:
           <input
@@ -98,7 +98,7 @@ const App = () => {
             onChange={input_password}
             value={formData.password}
           />
-          <div>{formErrors.password}</div>
+          {/* <div>{formErrors.password}</div> */}
           <br></br>
           <input type="checkbox" id="consent" onChange={handleChange} />
           <button type="submit" id="" onClick={handleSubmit}>
